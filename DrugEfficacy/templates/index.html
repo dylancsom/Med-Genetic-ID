@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DNA Reader</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('send_css') }}">
+</head>
+<body>
+    <h1>DNA Reader</h1>
+    <form method="post" action="{{url_for('run_dna_read')}}" enctype="multipart/form-data">
+        <input type="file" name="file">
+        <input type="submit" value="Upload">
+    </form>
+    <div className="mid_bottom_indexcont">
+        <div className="title">
+            <h2>How It Works</h2>
+        <div className="content">
+            
+                <p>Once users upload a text file with their DNA data (provided through
+                services such as Ancestry or 23andme) this algorithm reads the file
+                line by line and identifies the RSIDs and the Alleles attached to them.
+                Together, these form an SNP. Some SNPs have been studied and found to
+                hold some association to cancer in those studies. A number of these SNPs
+                have been saved to an accompanying database, where the identified SNPs in
+                user's DNA text file are compared. If there are any matches found, meaning
+                if there is an SNP found in both the user's DNA and the database, it will
+                in the results, along with the type of cancer, and the risk association the
+                SNP holds.</p>
+        </div>
+    </div>
+
+    
+</body>
+</html>

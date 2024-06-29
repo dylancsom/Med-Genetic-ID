@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> SNPs Found</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('send_css') }}">
+</head>
+<body>
+    <h1> Associated SNPs Found</h1>
+    <form method="post" action="{{ url_for('results') }}">
+        <input type="text" name="search_query" placeholder="Search entity name" value="{{ search_query }}">
+        <input type="submit" value="Search">
+    </form>
+    {% if matches %}
+    <table>
+        <tr>
+            <th>SNP</th>
+            <th>Entity Name</th>
+        </tr>
+        {% for match in matches %}
+        <tr>
+            <td>{{ match[0] }}</td>
+            <td>{{ match[1] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <p>No matches found</p>
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,118 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #e6f2ff; /* very light powder blue */
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+
+    left: 0;
+    margin: 0;
+    color: rgb(69, 69, 72);
+    font-size: 3.0em;
+}
+
+form {
+    margin: 0 auto;
+    width: 300px;
+    text-align: left;
+}
+
+input[type="file"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+input[type="submit"] {
+    background-color: green;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+table {
+    border-collapse: collapse;
+    width: 50%;
+    margin: 0;
+    text-align: left;
+    float: right;
+}
+
+.title {
+    position: absolute;
+    top: 0;
+    left: 5;
+    text-align: center; 
+}
+
+
+.mid_bottom_indexcont {
+    position: relative;
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50vh; 
+} 
+
+.content{
+    position: relative;
+    padding: 20px;
+    text-align: left;
+}
+
+
+
+.risk-association.green {
+    color: green;
+}
+
+.risk-association.red {
+    color: red;
+}
+
+.risk-association.grey {
+    color: #ccc;
+}
+
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #333;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+  
+h2 {
+    color: #333;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+  
+p {
+    color: #666;
+    font-size: 16px;
+    margin-bottom: 5px;
+}

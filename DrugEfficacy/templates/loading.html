@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Loading</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('send_css') }}">
+    <style>
+        /* CSS styles for the loading screen */
+        .loading-screen {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+        .loading-icon {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #333;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="loading-screen">
+        <div class="loading-icon"></div>
+        <p id="loading-message">Strange, Isn't It?</p>
+    </div>
+
+  
+        <script>
+            var messages = ["All These Numbers...", "All These Letters...", "That's...", "Us?"];
+    
+            var counter = 0;
+    
+            var checkProcessingStatus = function() {
+                fetch("/check_processing_status")
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.status === "finished") {
+                            window.location.href = "/results";
+                        }
+                    })
+            }
+            setInterval(checkProcessingStatus, 1000);
+    
+            function updateMessage() {
+                document.getElementById("loading-message").textContent = messages[counter];
+                counter++;
+                if (counter >= messages.length) {
+                    counter = 0;
+                }
+            }
+    
+            setInterval(updateMessage, 2000);
+        </script>
+</body>
+</html>
+
